@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Title & Meta -->
+  <title>ESPADA | AI Automation Architect &amp; Systems Engineer</title>
+  <meta name="description" content="ESPADA — Elite AI automation consultant and systems architect specializing in workflow integrations, n8n automation, custom APIs, and AI-augmented business processes." />
+  <meta name="keywords" content="ESPADA, AI automation consultant, workflow integration, n8n automation, API integration, Make, Zapier, LLM pipelines, autonomous workflows, custom backend" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://espada.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ESPADA | AI Automation Architect &amp; Systems Engineer" />
+  <meta property="og:description" content="Architecting intelligent systems and workflow integrations that eliminate manual friction." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://espada.io/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design Tokens & Theme ──────────────────────────────────────── */
+    :root {
+      /* Deep Dark Obsidian & Red Undertones */
+      --bg-base:        #080406;
+      --bg-darker:      #040203;
+      --bg-surface:     #11080d;
+      --bg-surface-elev:#180b13;
+      --bg-card:        rgba(19, 9, 15, 0.85);
+      --bg-card-hover:  rgba(28, 13, 22, 0.95);
+
+      /* Fiery Orange & Laser Crimson Accents */
+      --orange:         #ff5500;
+      --orange-bright:  #ff7700;
+      --orange-light:   #ffa34d;
+      --red:            #ff2244;
+      --red-dark:       #c70f2d;
+      --red-deep:       #420914;
+
+      /* Glowing Accents & Gradients */
+      --fire-gradient:  linear-gradient(135deg, #ff5500 0%, #ff2244 100%);
+      --fire-gradient-h:linear-gradient(135deg, #ff7700 0%, #ff3355 100%);
+      --fire-subtle:    linear-gradient(135deg, rgba(255,85,0,0.12) 0%, rgba(255,34,68,0.08) 100%);
+      --glow-orange:    rgba(255, 85, 0, 0.3);
+      --glow-red:       rgba(255, 34, 68, 0.25);
+      --glow-ambient:   rgba(255, 60, 0, 0.15);
+
+      /* Typography & High-Contrast Neutral Colors */
+      --white:          #ffffff;
+      --text-main:      #fcf5f7;
+      --text-muted:     #c7b3bb;
+      --text-dim:       #8a717b;
+      --border-subtle:  rgba(255, 85, 0, 0.14);
+      --border-active:  rgba(255, 85, 0, 0.45);
+      --border-red:     rgba(255, 34, 68, 0.25);
+
+      /* Fonts */
+      --font-heading:   'Space Grotesk', system-ui, sans-serif;
+      --font-body:      'Plus Jakarta Sans', system-ui, sans-serif;
+
+      --radius-sm:      6px;
+      --radius-md:      10px;
+      --radius-lg:      16px;
+      --radius-full:    9999px;
+    }
+
+    /* ─── Global Reset & Base Styles ────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      color-scheme: dark;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background Atmospheric Glows */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 20%;
+      width: 60vw;
+      height: 45vh;
+      background: radial-gradient(circle, rgba(255, 68, 0, 0.08) 0%, rgba(255, 20, 60, 0.03) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: 5%;
+      right: 10%;
+      width: 50vw;
+      height: 40vh;
+      background: radial-gradient(circle, rgba(255, 34, 68, 0.06) 0%, rgba(255, 85, 0, 0.02) 60%, transparent 80%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(90px);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ─── Typography & Utilities ────────────────────────────────────── */
+    h1, h2, h3, h4, .brand-font {
+      font-family: var(--font-heading);
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .gradient-text {
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange-bright);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--fire-gradient);
+      border-radius: 2px;
+      transform: rotate(45deg);
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--fire-gradient);
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ffa34d;
+      background: rgba(255, 85, 0, 0.08);
+      border: 1px solid rgba(255, 85, 0, 0.22);
+      border-radius: var(--radius-sm);
+      padding: 0.3rem 0.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: rgba(255, 85, 0, 0.16);
+      border-color: rgba(255, 85, 0, 0.45);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ─── Buttons ───────────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: var(--fire-gradient);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: 0 4px 20px var(--glow-orange), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--fire-gradient-h);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 85, 0, 0.5), 0 0 15px rgba(255, 34, 68, 0.4);
+      color: var(--white);
+    }
+
+    .btn-primary:hover::before {
+      opacity: 1;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--orange);
+      background: rgba(255, 85, 0, 0.1);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 85, 0, 0.2);
+    }
+
+    /* ─── Navigation ────────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(8, 4, 6, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    #nav.scrolled {
+      background: rgba(6, 2, 4, 0.96);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border-bottom-color: rgba(255, 85, 0, 0.25);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.15rem 0;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .nav-logo .brand-dot {
+      color: var(--orange);
+      font-size: 1.6rem;
+      line-height: 0;
+      margin-left: -2px;
+      text-shadow: 0 0 12px var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--fire-gradient);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+      text-shadow: 0 0 8px rgba(255, 85, 0, 0.4);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.65rem 1.4rem;
+      font-size: 0.84rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--white);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    /* ─── Hero Section ──────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 5rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero_bg.jpg');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.42;
+      transform: scale(1.02);
+      transition: transform 10s ease;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 30%, rgba(255, 34, 68, 0.15) 0%, transparent 60%),
+                  linear-gradient(100deg, var(--bg-base) 45%, rgba(8,4,6,0.85) 75%, rgba(8,4,6,0.3) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 740px;
+      padding: 6.5rem 0 5.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(255, 85, 0, 0.08);
+      border: 1px solid rgba(255, 85, 0, 0.35);
+      border-radius: var(--radius-full);
+      padding: 0.45rem 1.25rem;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--orange-light);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.75rem;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 85, 0, 0.15);
+    }
+
+    .hero-badge-pulse {
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.7);
+      animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 85, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-content h1 span.accent {
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(255, 85, 0, 0.2);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .hero-sub strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-trust {
+      margin-top: 3.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 85, 0, 0.12);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .trust-item svg {
+      color: var(--orange);
+      filter: drop-shadow(0 0 6px var(--orange));
+    }
+
+    .trust-sep {
+      color: var(--text-dim);
+    }
+
+    /* ─── Problem & Strategy Section ────────────────────────────────── */
+    #problem {
+      padding: 7.5rem 0;
+      background: var(--bg-surface);
+      position: relative;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .problem-left h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      line-height: 1.22;
+      margin-bottom: 1.4rem;
+    }
+
+    .problem-left p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    .pain-list {
+      list-style: none;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: rgba(255, 34, 68, 0.04);
+      border-left: 3px solid var(--red);
+      padding: 0.8rem 1.1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .pain-list li::before {
+      content: '✕';
+      color: var(--red);
+      font-weight: 800;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .value-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px);
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--fire-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+
+    .value-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-active);
+      transform: translateX(6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 85, 0, 0.12);
+    }
+
+    .value-card:hover::before {
+      opacity: 1;
+    }
+
+    .value-card-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+      padding: 0.5rem;
+      background: rgba(255, 85, 0, 0.1);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 85, 0, 0.2);
+    }
+
+    .value-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .value-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── Services Section ──────────────────────────────────────────── */
+    #services {
+      padding: 8rem 0;
+      position: relative;
+    }
+
+    .services-header {
+      max-width: 680px;
+      margin-bottom: 4rem;
+    }
+
+    .services-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .services-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--fire-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 85, 0, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 85, 0, 0.15);
+    }
+
+    .service-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: var(--fire-subtle);
+      border: 1px solid rgba(255, 85, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      color: var(--orange);
+      box-shadow: 0 0 15px rgba(255, 85, 0, 0.15);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.85rem;
+      color: var(--white);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .service-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+    }
+
+    /* ─── Case Studies Section ──────────────────────────────────────── */
+    #case-studies {
+      padding: 8rem 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .cs-header {
+      max-width: 680px;
+      margin-bottom: 4rem;
+    }
+
+    .cs-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .cs-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .case-studies-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .cs-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3rem);
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3rem;
+      position: relative;
+      backdrop-filter: blur(12px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cs-card:hover {
+      border-color: rgba(255, 85, 0, 0.4);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 85, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .cs-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cs-industry {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .cs-card h3 {
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+
+    .cs-section-title {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--orange-bright);
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .cs-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .cs-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.8rem;
+    }
+
+    .cs-metrics {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+      background: rgba(8, 4, 6, 0.65);
+      border: 1px solid rgba(255, 85, 0, 0.15);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+    }
+
+    .metric-box {
+      border-left: 3px solid var(--orange);
+      padding-left: 1.25rem;
+    }
+
+    .metric-value {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-label {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ─── About Section ─────────────────────────────────────────────── */
+    #about {
+      padding: 8rem 0;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 6px;
+      background: var(--fire-gradient);
+      box-shadow: 0 12px 36px var(--glow-orange);
+    }
+
+    .about-photo {
+      border-radius: calc(var(--radius-lg) - 4px);
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.05);
+    }
+
+    .about-content h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-content p strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .about-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 2rem;
+    }
+
+    /* ─── Process Section ───────────────────────────────────────────── */
+    #process {
+      padding: 8rem 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .process-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .process-header h2 {
+      font-size: clamp(2rem, 3.8vw, 2.9rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .process-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+      position: relative;
+    }
+
+    .process-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.75rem;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .process-step:hover {
+      border-color: var(--orange);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 85, 0, 0.15);
+    }
+
+    .step-num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+
+    .process-step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+
+    .process-step p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── CTA Box ───────────────────────────────────────────────────── */
+    #cta {
+      padding: 7.5rem 0;
+      position: relative;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(28, 13, 22, 0.9) 0%, rgba(14, 6, 11, 0.95) 100%);
+      border: 1.5px solid rgba(255, 85, 0, 0.3);
+      border-radius: var(--radius-lg);
+      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3.5rem);
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 85, 0, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(255, 85, 0, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 3.8vw, 2.9rem);
+      margin-bottom: 1.25rem;
+      color: var(--white);
+    }
+
+    .cta-box p {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.75;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    /* ─── Contact Section ───────────────────────────────────────────── */
+    #contact {
+      padding: 8rem 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .contact-left h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-left p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+    }
+
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      padding: 0.75rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-detail-item:hover {
+      border-color: var(--orange);
+    }
+
+    .contact-detail-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 85, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* Form Styles */
+    #contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.75rem, 4vw, 2.75rem);
+      backdrop-filter: blur(14px);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(8, 4, 6, 0.8);
+      border: 1.5px solid rgba(255, 85, 0, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--white);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.25);
+      background: rgba(14, 7, 11, 0.95);
+    }
+
+    .form-group textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .form-legal {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 0.85rem;
+      text-align: center;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────────── */
+    #footer {
+      padding: 3.5rem 0;
+      background: var(--bg-darker);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-copy {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange-light);
+    }
+
+    /* ─── Animations & Transitions ──────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.24s; }
+    .delay-3 { transition-delay: 0.36s; }
+    .delay-4 { transition-delay: 0.48s; }
+
+    /* ─── Responsive Media Queries ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .problem-grid,
+      .cs-card,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-photo {
+        height: 320px;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .about-photo-wrap {
+        max-width: 332px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 4, 7, 0.98);
+        border-bottom: 1px solid var(--border-subtle);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-content h1 {
+        font-size: 2.35rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-logo" href="#hero" id="nav-logo">
+          ESPADA<span class="brand-dot">.</span>
+        </a>
+
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#services" id="nav-services">Services</a></li>
+          <li><a href="#case-studies" id="nav-work">Work &amp; Results</a></li>
+          <li><a href="#about" id="nav-about">About ESPADA</a></li>
+          <li><a href="#process" id="nav-process">Process</a></li>
+          <li><a href="#contact" id="nav-contact-link">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <a href="#contact" class="btn-primary nav-cta" id="nav-book-call">
+            Get in Touch
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 8h9M8 3.5l4.5 4.5L8 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+          <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle Menu">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <header id="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-pulse"></span>
+          AI Automation Architect &amp; Systems Engineer
+        </div>
+        <h1>
+          Architecting Intelligent Systems. <br/>
+          <span class="accent">Eliminating Friction.</span>
+        </h1>
+        <p class="hero-sub">
+          I engineer resilient <strong>AI-augmented workflows</strong>, custom API integrations, and autonomous pipelines that connect your entire software ecosystem — eliminating manual handoffs, recovering hundreds of hours, and scaling your operations.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary" id="hero-book-call">
+            Start a Project
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 8h9M8 3.5l4.5 4.5L8 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+          <a href="#case-studies" class="btn-outline" id="hero-view-work">Explore Case Studies</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            n8n &amp; Make Certified
+          </div>
+          <span class="trust-sep">·</span>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            REST &amp; GraphQL API Integration
+          </div>
+          <span class="trust-sep">·</span>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Autonomous LLM Workflows
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PROBLEM / VALUE PROP
+  ══════════════════════════════════════════════ -->
+  <section id="problem" aria-labelledby="problem-heading">
+    <div class="container">
+      <div class="problem-grid">
+
+        <div class="problem-left fade-up">
+          <span class="section-label">The Challenge</span>
+          <h2 id="problem-heading">Disconnected tools create operational bottlenecks and drain momentum</h2>
+          <p>You’ve invested in industry-leading software — CRM, billing, project management, ERP, and customer support. Yet your team is still trapped acting as human glue: copying, pasting, and reconciling fragmented records across tabs.</p>
+          <p>That friction isn't just an inconvenience — it's an engineering problem with quantifiable costs in errors, delays, and lost team capacity.</p>
+          <ul class="pain-list">
+            <li>Manual data transfers between CRM, billing, and fulfillment create constant lag</li>
+            <li>Client onboarding stalls on repetitive manual tasks across separate dashboards</li>
+            <li>Weekly executive reports require hours of fragile spreadsheet compilation</li>
+            <li>High-value talent spends critical hours on repetitive administrative triage</li>
+          </ul>
+        </div>
+
+        <div class="value-cards fade-up delay-2">
+          <div class="value-card">
+            <div class="value-card-icon">⚡</div>
+            <h3>Engineered for High Reliability</h3>
+            <p>No fragile hacks or half-baked templates. I design production-grade automations equipped with idempotent retries, robust error handling, and automated alerts.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card-icon">🔒</div>
+            <h3>Zero Lock-In &amp; Clean Code</h3>
+            <p>Every pipeline is built on open standards, fully documented, and handed over cleanly to your team. You retain complete ownership and full control over your infrastructure.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card-icon">🎯</div>
+            <h3>Direct Senior Execution</h3>
+            <p>You collaborate directly with <strong>ESPADA</strong> from initial architecture through production deployment — ensuring deep focus, fast turnaround, and zero delegation dilution.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES
+  ══════════════════════════════════════════════ -->
+  <section id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="services-header fade-up">
+        <span class="section-label">Core Capabilities</span>
+        <div class="divider"></div>
+        <h2 id="services-heading">Enterprise Automation &amp; System Integration</h2>
+        <p>From visual orchestration engines to custom high-throughput microservices and generative AI integrations, I construct end-to-end automation architectures tailored to your stack.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card fade-up delay-1">
+          <div class="service-icon-wrap">⚡</div>
+          <h3>Workflow Integration &amp; Orchestration</h3>
+          <p>Seamlessly unify CRM, ERP, finance, and operations with event-driven pipelines. Automated state machines, webhooks, complex branching logic, and robust error management.</p>
+          <div class="service-tools">
+            <span class="tag">n8n</span>
+            <span class="tag">Make</span>
+            <span class="tag">Zapier</span>
+            <span class="tag">Webhooks</span>
+          </div>
+        </article>
+
+        <article class="service-card fade-up delay-2">
+          <div class="service-icon-wrap">🔌</div>
+          <h3>Custom API &amp; Microservice Bridges</h3>
+          <p>When off-the-shelf connectors fall short, I build dedicated API microservices and middleware to bridge proprietary, legacy, or complex modern systems.</p>
+          <div class="service-tools">
+            <span class="tag">REST APIs</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">OAuth 2.0</span>
+            <span class="tag">Node.js / TS</span>
+          </div>
+        </article>
+
+        <article class="service-card fade-up delay-3">
+          <div class="service-icon-wrap">🧠</div>
+          <h3>AI-Augmented Autonomous Pipelines</h3>
+          <p>Integrate cutting-edge LLMs and vision models into business processes — automated document analysis, dynamic content synthesis, sentiment routing, and AI agents.</p>
+          <div class="service-tools">
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Anthropic Claude</span>
+            <span class="tag">n8n AI Agents</span>
+            <span class="tag">LangChain</span>
+          </div>
+        </article>
+
+        <article class="service-card fade-up delay-1">
+          <div class="service-icon-wrap">📊</div>
+          <h3>Real-Time Data Pipelines &amp; Sync</h3>
+          <p>Maintain complete data integrity across all corporate tools. Multi-directional syncs, database replications, and automated transformations that keep your records pristine.</p>
+          <div class="service-tools">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Airtable</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Redis</span>
+          </div>
+        </article>
+
+        <article class="service-card fade-up delay-2">
+          <div class="service-icon-wrap">🔍</div>
+          <h3>Automation Architecture Audit</h3>
+          <p>A comprehensive deep-dive into your current tech stack and operational workflows. Pinpoint high-ROI automation opportunities, security vulnerabilities, and bottleneck points.</p>
+          <div class="service-tools">
+            <span class="tag">Process Mapping</span>
+            <span class="tag">ROI Modeling</span>
+            <span class="tag">Architecture Blueprint</span>
+          </div>
+        </article>
+
+        <article class="service-card fade-up delay-3">
+          <div class="service-icon-wrap">🛡️</div>
+          <h3>System Hardening &amp; Support</h3>
+          <p>Upgrade existing automations for enterprise reliability. Implement dead-letter queues, real-time Slack/Pager alerts, automated retry triggers, and thorough technical documentation.</p>
+          <div class="service-tools">
+            <span class="tag">Monitoring</span>
+            <span class="tag">Error Logging</span>
+            <span class="tag">Documentation</span>
+            <span class="tag">SLA Support</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CASE STUDIES / WORK
+  ══════════════════════════════════════════════ -->
+  <section id="case-studies" aria-labelledby="cs-heading">
+    <div class="container">
+      <div class="cs-header fade-up">
+        <span class="section-label">Proven Impact</span>
+        <div class="divider"></div>
+        <h2 id="cs-heading">Real Systems. Measurable ROI.</h2>
+        <p>Specific outcomes engineered for high-growth operations teams.</p>
+      </div>
+
+      <div class="case-studies-list">
+
+        <!-- Case Study 1 -->
+        <article class="cs-card fade-up">
+          <div>
+            <div class="cs-card-meta">
+              <span class="tag">Case Study 01</span>
+              <span class="cs-industry">B2B SaaS &middot; 15-Person Ops Team</span>
+            </div>
+            <h3>Eliminating a 3-Hour Daily Reporting Workflow with Automated Data Fusion</h3>
+
+            <p class="cs-section-title">The Challenge</p>
+            <p>Operations pulled metrics across HubSpot, Stripe, and a PostgreSQL cluster every morning, manually transforming records in Google Sheets for leadership briefing. The routine consumed 15 hours weekly, introduced human error, and delayed critical decision-making.</p>
+
+            <p class="cs-section-title">The ESPADA Solution</p>
+            <p>Architected an automated n8n execution pipeline triggering daily at 07:00 UTC. It queries APIs concurrently, normalizes data models, syncs directly to structured analytics tables, and posts an executive visual briefing directly to Slack with zero human intervention.</p>
+
+            <p class="cs-section-title">Stack Used</p>
+            <div class="cs-stack">
+              <span class="tag">n8n</span>
+              <span class="tag">HubSpot API</span>
+              <span class="tag">Stripe API</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Slack Bot API</span>
+            </div>
+          </div>
+
+          <div class="cs-metrics">
+            <div class="metric-box">
+              <div class="metric-value">3.5 hrs</div>
+              <div class="metric-label">saved every single workday</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">reporting accuracy &amp; on-time delivery</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">0</div>
+              <div class="metric-label">manual failures across 12+ months</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 2 -->
+        <article class="cs-card fade-up delay-1">
+          <div>
+            <div class="cs-card-meta">
+              <span class="tag">Case Study 02</span>
+              <span class="cs-industry">Digital Agency &middot; 40-Person Team</span>
+            </div>
+            <h3>Autonomous Multi-Platform Client Onboarding Orchestration</h3>
+
+            <p class="cs-section-title">The Challenge</p>
+            <p>New enterprise client sign-ups required coordinating across Pipedrive, Asana, Notion client portals, Slack, and Mailchimp. The fractured process relied on 5 different team members, frequently missed checklist items, and created delayed onboarding timelines.</p>
+
+            <p class="cs-section-title">The ESPADA Solution</p>
+            <p>Designed a unified webhook-driven Make pipeline triggered on closed deals. The engine provisions workspace instances, configures Asana task boards from custom templates, generates secure client portal access, and stages personalized email introductions in under 90 seconds.</p>
+
+            <p class="cs-section-title">Stack Used</p>
+            <div class="cs-stack">
+              <span class="tag">Make</span>
+              <span class="tag">Pipedrive API</span>
+              <span class="tag">Asana API</span>
+              <span class="tag">Notion API</span>
+              <span class="tag">Mailchimp API</span>
+            </div>
+          </div>
+
+          <div class="cs-metrics">
+            <div class="metric-box">
+              <div class="metric-value">92%</div>
+              <div class="metric-label">reduction in setup turnaround time</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">5 &#8594; 1</div>
+              <div class="metric-label">team touchpoints required per client</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">SLA compliance &amp; asset provision rate</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT ESPADA
+  ══════════════════════════════════════════════ -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-photo-wrap fade-up">
+          <img
+            class="about-photo"
+            src="avatar_portrait.jpg"
+            alt="ESPADA, AI Automation Architect &amp; Systems Engineer"
+            width="320"
+            height="380"
+          />
+        </div>
+
+        <div class="about-content fade-up delay-2">
+          <span class="section-label">About ESPADA</span>
+          <div class="divider"></div>
+          <h2 id="about-heading">Engineering high-leverage systems for modern organizations</h2>
+          <p>I operate as <strong>ESPADA</strong> — an independent automation consultant and systems architect. My focus is dedicated to solving one crucial problem: <strong>making complex enterprise tools communicate seamlessly, reliably, and intelligently.</strong></p>
+          <p>Rather than providing superficial advice or generic advice decks, I design, code, and deploy bulletproof automation infrastructure. With deep expertise across modern API protocols, no-code/low-code orchestration platforms, and AI agent frameworks, I architect workflows built to handle real-world scale and edge cases.</p>
+          <p>When you collaborate with ESPADA, you work directly with a senior engineer committed to delivering clean, maintainable systems that generate compound returns for your business.</p>
+          <div class="about-credentials">
+            <span class="tag">n8n Certified Engineer</span>
+            <span class="tag">Make Platinum Partner</span>
+            <span class="tag">REST &amp; GraphQL Architect</span>
+            <span class="tag">Node.js &amp; TypeScript</span>
+            <span class="tag">LLM &amp; AI Integration</span>
+            <span class="tag">Global Remote / London</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROCESS
+  ══════════════════════════════════════════════ -->
+  <section id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="process-header fade-up">
+        <span class="section-label">Engagement Model</span>
+        <h2 id="process-heading">Predictable, Transparent Delivery</h2>
+        <p>From initial architecture review to live production rollout — a disciplined 4-stage engineering sprint.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step fade-up delay-1">
+          <div class="step-num">01</div>
+          <h3>System Audit</h3>
+          <p>30-minute discovery call to map your current stack, data paths, and pinpoint high-leverage automation targets.</p>
+        </div>
+        <div class="process-step fade-up delay-2">
+          <div class="step-num">02</div>
+          <h3>Architecture Plan</h3>
+          <p>Clear technical blueprint within 3 business days, detailing schema mappings, API endpoints, deliverables, and fixed fees.</p>
+        </div>
+        <div class="process-step fade-up delay-3">
+          <div class="step-num">03</div>
+          <h3>Build &amp; Stress Test</h3>
+          <p>Rigorous staging builds tested with live payload anomalies, failover checks, and idempotent retry safeguards.</p>
+        </div>
+        <div class="process-step fade-up delay-4">
+          <div class="step-num">04</div>
+          <h3>Handover &amp; Support</h3>
+          <p>Comprehensive interactive documentation, team walkthrough, and 30 days of active post-launch optimization included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA SECTION
+  ══════════════════════════════════════════════ -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-box fade-up">
+        <span class="section-label">Let's Build</span>
+        <h2 id="cta-heading">Ready to automate your operations?</h2>
+        <p>
+          Book a direct discovery consultation to explore your technical requirements and discover how ESPADA can transform your workflow efficiency.
+        </p>
+        <div class="cta-actions">
+          <a href="#contact" class="btn-primary" id="cta-book-call">
+            Schedule a Consultation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 8h9M8 3.5l4.5 4.5L8 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+          <a href="mailto:contact@espada.io" class="btn-outline" id="cta-email">Direct Email Enquiry</a>
+        </div>
+        <p class="cta-note">Average response within 12 business hours. Direct senior response.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT FORM
+  ══════════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-left fade-up">
+          <span class="section-label">Connect</span>
+          <div class="divider"></div>
+          <h2 id="contact-heading">Discuss Your Integration Project</h2>
+          <p>
+            Share details about your tools, operational friction points, and the desired outcome. You'll receive a detailed, candid technical response outlining possibilities and architecture suggestions.
+          </p>
+
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong style="display:block; font-size:0.8rem; color:var(--text-dim); text-transform:uppercase;">Direct Email</strong>
+                <span>contact@espada.io</span>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <strong style="display:block; font-size:0.8rem; color:var(--text-dim); text-transform:uppercase;">LinkedIn</strong>
+                <span>linkedin.com/in/espada-automation</span>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <strong style="display:block; font-size:0.8rem; color:var(--text-dim); text-transform:uppercase;">Availability</strong>
+                <span>Mon – Fri, 08:00 – 18:00 UTC (Global Remote)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up delay-2">
+          <form id="contact-form" name="contact" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="john@enterprise.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" placeholder="Acme Dynamics" />
+            </div>
+
+            <div class="form-group">
+              <label for="project-type">Project Category</label>
+              <select id="project-type" name="project_type">
+                <option value="" disabled selected>Select a project category&hellip;</option>
+                <option value="workflow-integration">Enterprise Workflow Integration (n8n / Make)</option>
+                <option value="custom-api">Custom API &amp; Microservice Integration</option>
+                <option value="ai-process">AI &amp; Autonomous LLM Pipeline</option>
+                <option value="audit">Architecture Audit &amp; Bottleneck Analysis</option>
+                <option value="data-sync">Real-Time Data Pipeline &amp; Sync</option>
+                <option value="other">Custom Architecture Consultation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Scope &amp; Target Outcomes</label>
+              <textarea id="message" name="message" placeholder="Describe your current software ecosystem, the manual processes you need eliminated, and your target timeline..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit-btn" id="contact-submit">
+              Transmit Project Brief
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 8h9M8 3.5l4.5 4.5L8 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <p class="form-legal">Your details are strictly confidential and protected by NDA standards.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 ESPADA. All Rights Reserved. AI Automation &amp; Systems Architecture.</p>
+        <ul class="footer-links">
+          <li><a href="#services" id="footer-services">Services</a></li>
+          <li><a href="#case-studies" id="footer-work">Case Studies</a></li>
+          <li><a href="#about" id="footer-about">About</a></li>
+          <li><a href="mailto:contact@espada.io" id="footer-email">Direct Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Interactive Scripts ───────────────────────────────────────── -->
+  <script>
+    /* Scroll-fade Intersection Observer */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    /* Nav Glassmorphism on Scroll */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    /* Mobile Menu Toggle */
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (mobileBtn && navMenu) {
+      mobileBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+      });
+
+      // Close menu when clicking on any link
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          mobileBtn.textContent = '☰';
+        });
+      });
+    }
+
+    /* Interactive Form Handler */
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('contact-submit');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = "Transmitting...";
+        submitBtn.style.opacity = "0.7";
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          submitBtn.innerHTML = "✓ Brief Transmitted — ESPADA Will Connect Within 12 Hours";
+          submitBtn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+          submitBtn.style.opacity = "1";
+          submitBtn.style.boxShadow = "0 0 20px rgba(16, 185, 129, 0.4)";
+          form.reset();
+        }, 800);
+      });
+    }
+  </script>
+
+</body>
+</html>

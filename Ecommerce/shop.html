@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Collection | Mummy T's Boutique</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <a href="index.html" class="logo">Mummy T's</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="about.html">About & Contact</a>
+    </div>
+    <div class="nav-icons">
+      <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
+      <button class="icon-btn" style="margin-right: 1rem;"><i class="fa-solid fa-bag-shopping"></i><span class="cart-badge">2</span></button>
+      <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="container shop-layout fade-in">
+    <!-- Sidebar Filters -->
+    <aside class="shop-sidebar">
+      <div class="filter-group">
+        <h4>Categories</h4>
+        <div class="filter-options">
+          <label><input type="checkbox"> All Products (42)</label>
+          <label><input type="checkbox"> Dresses (12)</label>
+          <label><input type="checkbox"> Tops & Knitwear (8)</label>
+          <label><input type="checkbox"> Bags (10)</label>
+          <label><input type="checkbox"> Shoes (7)</label>
+          <label><input type="checkbox"> Jewelry (5)</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <div class="filter-options">
+          <label><input type="checkbox"> Under $50</label>
+          <label><input type="checkbox"> $50 - $100</label>
+          <label><input type="checkbox"> $100 - $200</label>
+          <label><input type="checkbox"> Over $200</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <h4>Size</h4>
+        <div class="filter-options">
+          <label><input type="checkbox"> XS</label>
+          <label><input type="checkbox"> S</label>
+          <label><input type="checkbox"> M</label>
+          <label><input type="checkbox"> L</label>
+          <label><input type="checkbox"> XL</label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="shop-main">
+      <div class="shop-header-bar">
+        <h2>The Collection</h2>
+        <div>
+          <select style="padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); outline: none; font-family: 'Outfit';">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest Arrivals</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <!-- Products -->
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Women's Moon Shoulder Bag _ Elegant Crescent Hobo Purse, Minimalist Fashion Handbag.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bags</span>
+            <h3 class="product-title">Crescent Moon Hobo Bag</h3>
+            <div class="product-price">$55.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Elegant Summer Sandals for Women - Golden Buckle Cross-Strap High Heels _ Open Toe Dress Shoes _ Chic Party & Evening Heeled Sandals.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Shoes</span>
+            <h3 class="product-title">Golden Buckle Sandals</h3>
+            <div class="product-price">$70.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Simons - Elly round sunglasses.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Accessories</span>
+            <h3 class="product-title">Elly Round Sunglasses</h3>
+            <div class="product-price">$35.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Gold Crystal Leaf Bracelet - Adjustable Dainty Gift Jewelry.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Jewelry</span>
+            <h3 class="product-title">Gold Crystal Leaf Bracelet</h3>
+            <div class="product-price">$30.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="BagForLove - Chic Graphic Twilly Scarf Shoulder Tote Bag with Letter Decor.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bags</span>
+            <h3 class="product-title">Twilly Scarf Tote Bag</h3>
+            <div class="product-price">$89.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Spring_Summer Pointed-Toe Solid Color Mules With Thin High Heels For Women.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Shoes</span>
+            <h3 class="product-title">Solid Color Pointed Mules</h3>
+            <div class="product-price">$65.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Vee Line Necklace Sterling Silver.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Jewelry</span>
+            <h3 class="product-title">Vee Line Sterling Necklace</h3>
+            <div class="product-price">$45.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="BagForLove - Unique Autumn Style Shoulder Tote Bag Arrival.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bags</span>
+            <h3 class="product-title">Autumn Style Shoulder Tote</h3>
+            <div class="product-price">$95.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Odile - Sac en cuir véritable - Noir.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bags</span>
+            <h3 class="product-title">Odile Black Leather Bag</h3>
+            <div class="product-price">$110.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Summer Sexy One-Buckle Criss-Cross Strap Sandals, Snake-Shaped Wrap Around, Pointed Toe Stiletto High Heels, Suitable For Banquet, Party, Nightclub, And Daily Commute, Chic & Elegant.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Shoes</span>
+            <h3 class="product-title">Criss-Cross Strap Sandals</h3>
+            <div class="product-price">$80.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="6pcs Punk Bracelet Set Mesh and Cuban Chain Design for Women Retro Elegant Jewelry, Trendy Daily.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Jewelry</span>
+            <h3 class="product-title">6pcs Punk Bracelet Set</h3>
+            <div class="product-price">$40.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Women's Pointed Toe High Heels 9_5CM, Elegant Thin High Heel Pumps With Metal Buckle Decor, Slingback PU Leather Dress Shoes For Daily, Party, Commuting, Black Office_Work Shoes,Mothers Day Gift.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Shoes</span>
+            <h3 class="product-title">Elegant Pointed Toe Heels</h3>
+            <div class="product-price">$75.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="Vintage Geometric Circle Necklace for Women,Gold Color Stainless Steel Embossed Clavicle Chain.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Jewelry</span>
+            <h3 class="product-title">Geometric Circle Necklace</h3>
+            <div class="product-price">$45.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="New style Geometric Leopard Print Sport Glasses For Women, Lightweight & Durable Composite Frame,.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Accessories</span>
+            <h3 class="product-title">Geometric Leopard Glasses</h3>
+            <div class="product-price">$35.00</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="BagForLove - Fashionable Polyester Deer Decoration Tote Bag for Ladies.jpg" alt="Product">
+            <div class="product-actions">
+              <button class="action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+              <button class="action-btn" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bags</span>
+            <h3 class="product-title">Deer Decoration Tote Bag</h3>
+            <div class="product-price">$85.00</div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 4rem;">
+        <button class="btn btn-outline">Load More Products</button>
+      </div>
+    </main>
+  </div>
+
+  <section class="container fade-in mb-5">
+    <div class="benefits-bar">
+      <div class="benefit-item">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h4>Free Shipping</h4>
+        <p>On all orders over $150. Beautifully packaged and delivered fast.</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-arrow-rotate-left"></i>
+        <h4>Easy Returns</h4>
+        <p>Not quite right? Return it within 30 days hassle-free.</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h4>Secure Checkout</h4>
+        <p>Your payment information is processed securely with top-tier encryption.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container fade-in mb-5">
+    <div class="promo-banner">
+      <h2>Join the VIP List</h2>
+      <p>Subscribe to get 15% off your first order and exclusive access to new drops.</p>
+      <form class="newsletter-form" style="max-width: 500px; margin: 0 auto; background: white; z-index: 2; position: relative;">
+        <input type="email" placeholder="Email address" required style="color: var(--text-main);">
+        <button type="submit">Unlock 15% Off</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Mummy T's</h2>
+          <p>Premium women's wear designed to empower, inspire, and celebrate your unique style.</p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; font-size: 1.5rem;">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Dresses</a></li>
+            <li><a href="#">Bags & Shoes</a></li>
+            <li><a href="#">Jewelry</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Size Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Newsletter</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Subscribe for exclusive offers and style updates.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email address" required>
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mummy T's Boutique. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-content">
+      <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-img">
+        <img src="" alt="Product">
+      </div>
+      <div class="modal-info">
+        <h2>Product Title</h2>
+        <div class="price">$0.00</div>
+        <p style="color: var(--text-light); margin-bottom: 2rem;">A premium addition to your wardrobe. Carefully crafted with high-quality materials to ensure durability and elegant style for any occasion.</p>
+        <button class="btn" style="width: 100%;">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
