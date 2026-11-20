@@ -1,12 +1,4 @@
 {
-  "version": 2,
-  "name": "juliet-ai-portfolio",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "trailingSlash": false
 }
