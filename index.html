@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAMGBADI JULIET | AI Systems Architect & Operations Automation Specialist</title>
+  <meta name="description" content="Portfolio of Jamgbadi Juliet - Elite AI Systems Architect & Business Automation Specialist. I build autonomous AI agents, n8n pipelines, and full-stack integrations that run your business 24/7.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#06080F',
+            surface: '#0B101E',
+            card: 'rgba(13, 18, 32, 0.75)',
+            cyan: {
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#00f0ff',
+              600: '#0284c7',
+            },
+            purple: {
+              400: '#c084fc',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            tech: ['Space Grotesk', 'sans-serif'],
+            code: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Three.js for Lightweight 3D Graphics -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-[#06080F] text-slate-100 font-body antialiased selection:bg-cyan-500/20 selection:text-cyan-300">
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="ambient-grid"></div>
+
+  <!-- ==========================================================================
+       1. NAVIGATION BAR (STICKY GLASSMORPHIC HEADER WITH JULIET'S PHOTO & NAME)
+       ========================================================================== -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#06080F]/80 border-b border-white/[0.08] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand & Owner Identity (Juliet's Photo + Name + Executive Title) -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative">
+          <div class="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-purple-500 to-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.4)] group-hover:shadow-[0_0_25px_rgba(0,240,255,0.7)] transition-all duration-300">
+            <img 
+              src="assets/juliet.jpg" 
+              alt="Jamgbadi Juliet - AI Systems Architect" 
+              class="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <!-- Live Green Status Pulse -->
+          <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#06080F] pulse-node"></span>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition">
+              JAMGBADI JULIET
+            </span>
+            <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-code bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
+              PRO ARCHITECT
+            </span>
+          </div>
+          <span class="font-tech text-xs text-slate-400 font-medium tracking-wide">
+            AI Systems & Business Automation
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Smooth Scroll Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-1 font-tech text-sm font-semibold text-slate-300">
+        <a href="#demos" class="px-3.5 py-2 rounded-lg hover:text-cyan-400 hover:bg-white/[0.03] transition">Live Demos</a>
+        <a href="#solutions" class="px-3.5 py-2 rounded-lg hover:text-cyan-400 hover:bg-white/[0.03] transition">Solutions</a>
+        <a href="#projects" class="px-3.5 py-2 rounded-lg hover:text-cyan-400 hover:bg-white/[0.03] transition">Projects & Architecture</a>
+        <a href="#process" class="px-3.5 py-2 rounded-lg hover:text-cyan-400 hover:bg-white/[0.03] transition">How I Build</a>
+        <a href="#testimonials" class="px-3.5 py-2 rounded-lg hover:text-cyan-400 hover:bg-white/[0.03] transition">Results</a>
+      </nav>
+
+      <!-- Header CTAs (Direct Contact & Glowing Audit Button) -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Direct Quick Call/WhatsApp Indicator -->
+        <a href="tel:09161014048" class="text-xs font-code text-slate-400 hover:text-cyan-300 transition flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-800 hover:border-slate-700">
+          <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>09161014048</span>
+        </a>
+
+        <!-- Glowing Calendly Audit CTA -->
+        <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="btn-primary-glow px-5 py-2.5 text-xs font-tech font-bold text-slate-950 flex items-center gap-2">
+          <span>Book Free Audit</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.05]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden border-b border-white/[0.08] bg-[#06080F]/95 px-6 py-5 space-y-3 font-tech text-sm">
+      <a href="#demos" class="block py-2 text-slate-300 hover:text-cyan-400">Live AI Demos</a>
+      <a href="#solutions" class="block py-2 text-slate-300 hover:text-cyan-400">Solutions by Industry</a>
+      <a href="#projects" class="block py-2 text-slate-300 hover:text-cyan-400">Featured Projects</a>
+      <a href="#process" class="block py-2 text-slate-300 hover:text-cyan-400">How I Build (Video)</a>
+      <a href="#testimonials" class="block py-2 text-slate-300 hover:text-cyan-400">Client Results</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2.5">
+        <a href="tel:09161014048" class="text-xs font-code text-cyan-300 py-2">Call/WhatsApp: 09161014048</a>
+        <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="btn-primary-glow text-center py-2.5 text-xs text-slate-950 font-bold">
+          Book Free Automation Audit
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       2. HERO SECTION (VISUAL 3D INTERACTIVE CORE & AUTOMATION PIPELINE)
+       ========================================================================== -->
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-8 pb-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Executive Value Proposition & CTAs -->
+        <div class="lg:col-span-7 space-y-7 text-left">
+          
+          <!-- Eyebrow Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-tech text-xs tracking-wider uppercase shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span>Eliminating Manual Operations With Custom AI</span>
+          </div>
+
+          <!-- Main Executive Headline (Using Syne font) -->
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl xl:text-6xl text-white tracking-tight leading-[1.12]">
+            I Build Custom <span class="gradient-text-cyan">AI Agents</span> & Automated Workflows That Run Your Business <span class="gradient-text-purple">24/7.</span>
+          </h1>
+
+          <!-- Subheadline (Using Plus Jakarta Sans font) -->
+          <p class="font-body text-slate-300 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
+            From intelligent customer support bots and automated email agents to custom web apps and backend integrations—I turn messy manual workflows into streamlined systems for local businesses, e-commerce, and SaaS.
+          </p>
+
+          <!-- Core Value Proposition Metric Pills -->
+          <div class="grid grid-cols-3 gap-3 pt-2 max-w-xl font-code">
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-white/[0.06] backdrop-blur-md">
+              <div class="text-xl sm:text-2xl font-bold text-cyan-400">20+ hrs</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wider font-tech">Saved Weekly</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-white/[0.06] backdrop-blur-md">
+              <div class="text-xl sm:text-2xl font-bold text-purple-400">&lt; 10 sec</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wider font-tech">Response Time</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-white/[0.06] backdrop-blur-md">
+              <div class="text-xl sm:text-2xl font-bold text-emerald-400">100%</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wider font-tech">Data Accuracy</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-3">
+            <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="btn-primary-glow px-8 py-4 text-sm font-tech font-bold text-slate-950 inline-flex items-center gap-2.5">
+              <span>Book a Free Automation Audit</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+
+            <a href="#demos" class="btn-secondary-glass px-7 py-4 text-sm font-tech font-semibold inline-flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Try Live AI Demos</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive 3D Three.js Scene + Visual Transformation Card -->
+        <div class="lg:col-span-5 relative flex flex-col items-center justify-center">
+          
+          <!-- 3D WebGL Canvas Container -->
+          <div id="three-hero-container" class="w-full h-[380px] sm:h-[420px] rounded-2xl relative cursor-grab active:cursor-grabbing">
+            <!-- 3D Overlay Badge -->
+            <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-[#06080F]/80 backdrop-blur-md border border-cyan-500/30 font-code text-[11px] text-cyan-300 flex items-center gap-1.5 pointer-events-none">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <span>INTERACTIVE 3D AI NEURAL CORE • DRAG TO ROTATE</span>
+            </div>
+          </div>
+
+          <!-- Visual Workflow Transformation Banner (Chaos -> Automated AI Pipeline) -->
+          <div class="w-full mt-3 p-4 glass-panel border border-cyan-500/20 rounded-xl relative overflow-hidden">
+            <div class="text-[10px] font-code text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
+              <span>LIVE AUTOMATION PIPELINE ARCHITECTURE</span>
+              <span class="text-cyan-400 font-bold">n8n + CLAUDE 3.5</span>
+            </div>
+
+            <!-- Visual Flowchart Nodes -->
+            <div class="grid grid-cols-3 gap-2 text-center items-center font-tech text-xs">
+              
+              <!-- Step 1: Ingest Chaos -->
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-red-500/30 text-slate-300">
+                <div class="text-[10px] font-code text-red-400">RAW INPUTS</div>
+                <div class="font-bold text-white text-xs mt-0.5">DMs, Emails, Forms</div>
+                <div class="text-[10px] text-slate-400">Unstructured Chaos</div>
+              </div>
+
+              <!-- Step 2: AI Reasoning Core -->
+              <div class="p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-400/50 text-cyan-300 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+                <div class="text-[10px] font-code text-cyan-400">CLAUDE AI CORE</div>
+                <div class="font-bold text-white text-xs mt-0.5">Triage & Decision</div>
+                <div class="text-[10px] text-cyan-300/80">Context Extraction</div>
+              </div>
+
+              <!-- Step 3: Automated Actions -->
+              <div class="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-emerald-300">
+                <div class="text-[10px] font-code text-emerald-400">OUTPUT ACTION</div>
+                <div class="font-bold text-white text-xs mt-0.5">Booked & Synced</div>
+                <div class="text-[10px] text-slate-400">0-Second Latency</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Tech Stack Ticker Bar -->
+      <div class="mt-16 pt-8 border-t border-white/[0.06]">
+        <p class="text-center font-tech text-xs uppercase tracking-widest text-slate-400 mb-6">
+          ENTERPRISE-GRADE AUTOMATION & AI TECH STACK
+        </p>
+        
+        <div class="overflow-hidden relative mask-radial">
+          <div class="ticker-track flex items-center gap-10 sm:gap-14 text-slate-400 font-tech font-bold text-base sm:text-lg">
+            
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#EA4B71]"></span>
+              <span>n8n Workflows</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#D97706]"></span>
+              <span>Claude (Anthropic)</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#EC4899]"></span>
+              <span>Lovable AI</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#00F0FF]"></span>
+              <span>Google Antigravity</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#25D366]"></span>
+              <span>WhatsApp Business API</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#FF7A59]"></span>
+              <span>HubSpot CRM</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#635BFF]"></span>
+              <span>Stripe Payments</span>
+            </div>
+
+            <!-- Duplicate for infinite seamless scroll -->
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#EA4B71]"></span>
+              <span>n8n Workflows</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#D97706]"></span>
+              <span>Claude (Anthropic)</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#EC4899]"></span>
+              <span>Lovable AI</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#00F0FF]"></span>
+              <span>Google Antigravity</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#25D366]"></span>
+              <span>WhatsApp Business API</span>
+            </div>
+
+            <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#FF7A59]"></span>
+              <span>HubSpot CRM</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       3. INTERACTIVE "TRY IT LIVE" AI SANDBOX (HIGHLY VISUAL WIDGET)
+       ========================================================================== -->
+  <section id="demos" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-tech text-xs tracking-wider uppercase">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          <span>Hands-On Interactive Experience</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+          Test My Work Live: <span class="gradient-text-cyan">The AI Sandbox</span>
+        </h2>
+        <p class="font-body text-slate-300 text-base sm:text-lg">
+          Don't just take my word for it. Click sample triggers below or type your own question to test how my autonomous agents and automated pipelines handle real business operations.
+        </p>
+      </div>
+
+      <!-- Two-Column Interactive Sandbox (Live Chatbot + Workflow Simulator) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- LEFT: TAB 1 - LIVE INTERACTIVE AI AGENT & BOOKING CHATBOT -->
+        <div class="lg:col-span-6">
+          <div id="chat-widget-container" class="glass-panel border border-cyan-500/30 rounded-2xl overflow-hidden shadow-2xl flex flex-col h-[580px]">
+            
+            <!-- Chatbot Header -->
+            <div class="p-4 bg-slate-900/90 border-b border-white/[0.08] flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="relative">
+                  <img src="assets/juliet.jpg" alt="Juliet's Agent" class="w-10 h-10 rounded-full object-cover border border-cyan-400/50">
+                  <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-slate-900"></span>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-white flex items-center gap-1.5">
+                    <span>Juliet's Autonomous Ops Agent</span>
+                    <span class="text-[10px] font-code text-cyan-300 bg-cyan-950 px-1.5 py-0.5 rounded border border-cyan-800">ONLINE</span>
+                  </div>
+                  <div class="font-tech text-xs text-slate-400">Trained on Business Ops, n8n, & Booking</div>
+                </div>
+              </div>
+
+              <!-- Mode Switcher -->
+              <div class="flex items-center bg-slate-950 p-1 rounded-lg border border-slate-800 text-xs font-tech">
+                <button class="chat-mode-toggle px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/40" data-mode="cyber">
+                  Tech View
+                </button>
+                <button class="chat-mode-toggle px-2.5 py-1 rounded text-slate-400 hover:text-slate-200" data-mode="whatsapp">
+                  WhatsApp Mode
+                </button>
+              </div>
+            </div>
+
+            <!-- Preset One-Click Test Prompts -->
+            <div class="p-3 bg-slate-950/60 border-b border-white/[0.05] overflow-x-auto flex gap-2 no-scrollbar">
+              <button class="prompt-chip whitespace-nowrap text-xs font-tech font-semibold px-3 py-1.5 rounded-full bg-slate-800/90 hover:bg-cyan-500/20 hover:text-cyan-300 border border-slate-700/80 transition" data-prompt="Where is my order #LUXE-8821?">
+                📦 Track Order #LUXE-8821
+              </button>
+              <button class="prompt-chip whitespace-nowrap text-xs font-tech font-semibold px-3 py-1.5 rounded-full bg-slate-800/90 hover:bg-emerald-500/20 hover:text-emerald-300 border border-slate-700/80 transition" data-prompt="Book VIP consultation for tomorrow at 2:00 PM">
+                📅 Book VIP Clinic Slot
+              </button>
+              <button class="prompt-chip whitespace-nowrap text-xs font-tech font-semibold px-3 py-1.5 rounded-full bg-slate-800/90 hover:bg-purple-500/20 hover:text-purple-300 border border-slate-700/80 transition" data-prompt="How do I sync n8n webhooks into HubSpot CRM?">
+                ⚡ n8n + HubSpot Sync
+              </button>
+            </div>
+
+            <!-- Chat Scroll Area -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm font-body">
+              
+              <!-- Initial Welcome Message from Juliet's Agent -->
+              <div class="flex justify-start">
+                <div class="chat-bubble-ai max-w-[85%] p-4 text-sm text-slate-200 shadow-xl">
+                  <div class="flex items-center justify-between border-b border-slate-700/50 pb-2 mb-2">
+                    <span class="text-xs font-semibold text-cyan-400 flex items-center gap-1.5 font-tech">
+                      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                      Juliet's AI Systems Assistant
+                    </span>
+                    <span class="text-[10px] text-slate-400 font-code">Live 24/7 Engine</span>
+                  </div>
+                  <p class="leading-relaxed">
+                    Hello! I'm an autonomous agent built by <strong class="text-white">Jamgbadi Juliet</strong>. I operate client bookings, customer support triage, order lookups, and multi-app CRM syncs in real-time.
+                  </p>
+                  <p class="text-xs text-slate-400 mt-2">
+                    👉 Click any sample prompt above or type a message below to test my autonomous response.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Chat Input Bar -->
+            <div class="p-3 bg-slate-900/90 border-t border-white/[0.08] flex items-center gap-2">
+              <input 
+                id="chat-input"
+                type="text" 
+                placeholder="Ask about order tracking, bookings, or automations..."
+                class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 font-body"
+              />
+              <button id="chat-send-btn" class="p-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: TAB 2 - WORKFLOW ROI & AUTOMATION PIPELINE SIMULATOR -->
+        <div class="lg:col-span-6">
+          <div class="glass-panel border border-purple-500/30 rounded-2xl p-6 h-[580px] flex flex-col justify-between shadow-2xl">
+            
+            <div>
+              <!-- Simulator Header -->
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6">
+                <div>
+                  <span class="text-xs font-code text-purple-400 font-bold uppercase tracking-wider">INTERACTIVE SIMULATOR</span>
+                  <h3 class="font-display font-bold text-xl text-white">Workflow & ROI Calculator</h3>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-purple-950 text-purple-300 border border-purple-500/30 font-code text-xs">
+                  Claude + n8n Model
+                </span>
+              </div>
+
+              <!-- Interactive Controls -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 font-tech">
+                
+                <div>
+                  <label class="block text-xs text-slate-300 font-semibold mb-1.5">Business Vertical</label>
+                  <select id="sim-industry" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-purple-400">
+                    <option value="local">Local Clinic / Real Estate / Agency</option>
+                    <option value="ecommerce">E-Commerce Brand (Shopify/Woo)</option>
+                    <option value="saas">SaaS & B2B Tech Company</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs text-slate-300 font-semibold mb-1.5">Primary Bottleneck</label>
+                  <select id="sim-bottleneck" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-purple-400">
+                    <option value="support">Customer Support & Instant Booking</option>
+                    <option value="email">Inbound Client Email Triage</option>
+                    <option value="crm">Manual CRM & Spreadsheet Data Entry</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Sliders -->
+              <div class="space-y-4 mb-6 font-tech">
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-slate-300 font-semibold">Weekly Manual Hours Lost:</span>
+                    <span id="sim-hours-val" class="font-code font-bold text-cyan-400">25 hrs/week</span>
+                  </div>
+                  <input id="sim-hours" type="range" min="10" max="70" value="25" class="w-full accent-cyan-400 cursor-pointer">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-slate-300 font-semibold">Average Team Hourly Value ($):</span>
+                    <span class="font-code font-bold text-purple-400">$45 / hr</span>
+                  </div>
+                  <input id="sim-rate" type="number" value="45" min="20" max="200" class="w-24 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white font-code">
+                </div>
+              </div>
+
+              <!-- Dynamic n8n Visual Pipeline Nodes -->
+              <div class="space-y-2 mb-6">
+                <div class="text-[10px] font-code text-slate-400 uppercase tracking-wider">
+                  Generated Automated Pipeline Preview
+                </div>
+                
+                <div class="grid grid-cols-3 gap-2">
+                  <div id="pipeline-trigger-node" class="p-2.5 rounded-xl bg-slate-950 border border-cyan-500/30 text-left">
+                    <!-- Populated dynamically by app.js -->
+                  </div>
+                  <div id="pipeline-ai-node" class="p-2.5 rounded-xl bg-slate-950 border border-purple-500/40 text-left">
+                    <!-- Populated dynamically by app.js -->
+                  </div>
+                  <div id="pipeline-action-node" class="p-2.5 rounded-xl bg-slate-950 border border-emerald-500/30 text-left">
+                    <!-- Populated dynamically by app.js -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Dynamic Projected ROI Outcome Banner -->
+            <div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 via-purple-950/40 to-slate-950 border border-white/[0.08] flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-code text-slate-400 uppercase">Estimated Annual Cost Saved</div>
+                <div id="metric-cost-saved" class="font-display font-extrabold text-2xl text-emerald-400">$47,970</div>
+              </div>
+
+              <div>
+                <div class="text-[10px] font-code text-slate-400 uppercase">Monthly Hours Reclaimed</div>
+                <div id="metric-hours-saved" class="font-display font-extrabold text-2xl text-cyan-400">82h</div>
+              </div>
+
+              <div>
+                <div class="text-[10px] font-code text-slate-400 uppercase">Response Latency</div>
+                <div id="metric-response-time" class="font-display font-extrabold text-2xl text-purple-400">&lt; 10 sec</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4. TAILORED SOLUTIONS BY INDUSTRY (VISUAL 4-MODULE GRID)
+       ========================================================================== -->
+  <section id="solutions" class="py-20 bg-slate-950/40 border-y border-white/[0.05] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 font-tech text-xs tracking-wider uppercase">
+          <span>Targeted Operational Impact</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+          Specific Systems Built For <span class="gradient-text-purple">Your Industry</span>
+        </h2>
+        <p class="font-body text-slate-300 text-base sm:text-lg">
+          No generic templates. I architect custom automated pipelines built specifically for the exact bottlenecks of clinics, agencies, online stores, and tech platforms.
+        </p>
+      </div>
+
+      <!-- 4-Card Interactive Visual Grid with 3D Tilt Hover -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Module 1: Local Businesses -->
+        <div class="glass-panel tilt-card p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-cyan-400">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div class="text-xs font-code text-cyan-400 font-bold uppercase mb-1">Clinics & Real Estate</div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Local Business Systems</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              24/7 WhatsApp & Web booking assistants, instant lead follow-up within 10 seconds, and zero-noshow automated SMS reminders.
+            </p>
+            <!-- Visual Node Flow Mini-Diagram -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 font-code text-[11px] space-y-1.5 text-slate-300 mb-4">
+              <div class="flex items-center gap-1.5 text-cyan-300"><span>•</span> <span>WhatsApp Webhook</span></div>
+              <div class="flex items-center gap-1.5 text-purple-300"><span>→</span> <span>Claude Slot Booking Agent</span></div>
+              <div class="flex items-center gap-1.5 text-emerald-300"><span>→</span> <span>Google Calendar Sync + SMS</span></div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-tech">
+            <span class="text-emerald-400 font-bold">100% Lead Capture</span>
+            <span class="text-slate-400 font-code">&lt; 10s Followup</span>
+          </div>
+        </div>
+
+        <!-- Module 2: E-Commerce Brands -->
+        <div class="glass-panel tilt-card p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-purple-400">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-950/80 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            </div>
+            <div class="text-xs font-code text-purple-400 font-bold uppercase mb-1">DTC & Online Retail</div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">E-Commerce Automation</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              AI shopping assistants, automated order-tracking & refund handling, and personalized abandoned-cart recovery workflows.
+            </p>
+            <!-- Visual Node Flow Mini-Diagram -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 font-code text-[11px] space-y-1.5 text-slate-300 mb-4">
+              <div class="flex items-center gap-1.5 text-cyan-300"><span>•</span> <span>Shopify Order Trigger</span></div>
+              <div class="flex items-center gap-1.5 text-purple-300"><span>→</span> <span>Claude Order Tracker Agent</span></div>
+              <div class="flex items-center gap-1.5 text-emerald-300"><span>→</span> <span>Automated DHL/FedEx Dispatch</span></div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-tech">
+            <span class="text-purple-400 font-bold">+28% Cart Recovery</span>
+            <span class="text-slate-400 font-code">24/7 Support</span>
+          </div>
+        </div>
+
+        <!-- Module 3: SaaS Companies -->
+        <div class="glass-panel tilt-card p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-cyan-400">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <div class="text-xs font-code text-cyan-400 font-bold uppercase mb-1">Software & B2B Tech</div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">SaaS Ops & Support</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Tier-1 technical support agents trained on product docs, automated onboarding drip sequences, and dynamic CRM lead enrichment.
+            </p>
+            <!-- Visual Node Flow Mini-Diagram -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 font-code text-[11px] space-y-1.5 text-slate-300 mb-4">
+              <div class="flex items-center gap-1.5 text-cyan-300"><span>•</span> <span>Intercom / Slack Inbound</span></div>
+              <div class="flex items-center gap-1.5 text-purple-300"><span>→</span> <span>Claude Vector Docs Search</span></div>
+              <div class="flex items-center gap-1.5 text-emerald-300"><span>→</span> <span>HubSpot Deal Auto-Stage</span></div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-tech">
+            <span class="text-cyan-400 font-bold">75% Tickets Solved</span>
+            <span class="text-slate-400 font-code">Zero Wait</span>
+          </div>
+        </div>
+
+        <!-- Module 4: Web App & Integration Engineering -->
+        <div class="glass-panel tilt-card p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-emerald-400">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div class="text-xs font-code text-emerald-400 font-bold uppercase mb-1">Full-Stack Builds</div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Web App Engineering</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Custom AI-powered web applications built with Lovable and Antigravity, sub-second speed optimization, and multi-API glue.
+            </p>
+            <!-- Visual Node Flow Mini-Diagram -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 font-code text-[11px] space-y-1.5 text-slate-300 mb-4">
+              <div class="flex items-center gap-1.5 text-cyan-300"><span>•</span> <span>Lovable / Modern React UI</span></div>
+              <div class="flex items-center gap-1.5 text-purple-300"><span>→</span> <span>Antigravity Engine</span></div>
+              <div class="flex items-center gap-1.5 text-emerald-300"><span>→</span> <span>REST & Webhook Connectors</span></div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-tech">
+            <span class="text-emerald-400 font-bold">99 Lighthouse Score</span>
+            <span class="text-slate-400 font-code">High-Converting</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       5. FEATURED PROJECTS & CASE STUDIES (PROBLEM -> SOLUTION -> RESULT)
+       ========================================================================== -->
+  <section id="projects" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-tech text-xs tracking-wider uppercase mb-3">
+            <span>Production Architecture Case Studies</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+            Featured Systems & <span class="gradient-text-cyan">Live Implementations</span>
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md font-body">
+          Explore the exact workflow schematics, problem-solution breakdowns, and verified metrics from four representative implementations.
+        </p>
+      </div>
+
+      <!-- 4 Core Featured Projects Grid with 3D Tilt Hover -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- PROJECT 1: Autonomous Email Triage & Response Agent -->
+        <div class="glass-panel tilt-card p-7 rounded-2xl border border-white/[0.08] hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag">n8n + Claude 3.5 Sonnet</span>
+              <span class="text-xs font-code text-cyan-400 font-bold">80% INBOX REDUCTION</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-white mb-2">
+              Autonomous Email Triage & Response Agent
+            </h3>
+            
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+              Eliminated daily executive inbox overwhelm by categorizing incoming inquiries, drafting context-aware replies using company documentation, and flagging urgent business leads automatically.
+            </p>
+
+            <!-- Visual Flowchart Architecture Preview -->
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 mb-6 space-y-3 font-code text-xs">
+              <div class="flex items-center justify-between text-slate-400 border-b border-slate-800 pb-2">
+                <span>SYSTEM PIPELINE</span>
+                <span class="text-emerald-400">STATUS: ACTIVE</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-cyan-300">[IMAP Trigger]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-300">[Claude Context Triage]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">[Draft & Route]</span>
+              </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-t border-slate-800 text-center font-code text-xs">
+              <div>
+                <div class="text-slate-400 text-[10px]">BEFORE</div>
+                <div class="text-red-400 font-bold">2.5 hrs/day</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">AFTER</div>
+                <div class="text-emerald-400 font-bold">15 min/day</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">ACCURACY</div>
+                <div class="text-cyan-400 font-bold">99.8%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-5 mt-2 flex items-center justify-between">
+            <button class="inspect-pipeline-btn text-xs font-tech font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5" data-project-id="1">
+              <span>Inspect Workflow Pipeline</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="text-xs font-code text-slate-400 hover:text-white">Request Similar Build →</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Full-Stack Website & Multi-App API Integration -->
+        <div class="glass-panel tilt-card p-7 rounded-2xl border border-white/[0.08] hover:border-purple-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag-purple">Lovable + Antigravity + HubSpot</span>
+              <span class="text-xs font-code text-purple-400 font-bold">ZERO DATA DROPS</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-white mb-2">
+              Full-Stack Website & Multi-App API Integration
+            </h3>
+            
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+              Connected a high-converting client website directly to HubSpot CRM, Stripe checkout, and automated scheduling webhooks—eliminating manual copy-pasting and syncing leads in sub-second time.
+            </p>
+
+            <!-- Visual Flowchart Architecture Preview -->
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 mb-6 space-y-3 font-code text-xs">
+              <div class="flex items-center justify-between text-slate-400 border-b border-slate-800 pb-2">
+                <span>SYSTEM PIPELINE</span>
+                <span class="text-emerald-400">STATUS: ACTIVE</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">[Lovable Frontend]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300">[n8n Sync Hub]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">[HubSpot + Stripe]</span>
+              </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-t border-slate-800 text-center font-code text-xs">
+              <div>
+                <div class="text-slate-400 text-[10px]">SYNC DELAY</div>
+                <div class="text-emerald-400 font-bold">&lt; 1 sec</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">MANUAL ENTRY</div>
+                <div class="text-cyan-400 font-bold">0 hrs/wk</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">LEAD CONV</div>
+                <div class="text-purple-400 font-bold">+44%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-5 mt-2 flex items-center justify-between">
+            <button class="inspect-pipeline-btn text-xs font-tech font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1.5" data-project-id="2">
+              <span>Inspect Workflow Pipeline</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="text-xs font-code text-slate-400 hover:text-white">Request Similar Build →</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: 24/7 E-Commerce & Local Support Chatbot -->
+        <div class="glass-panel tilt-card p-7 rounded-2xl border border-white/[0.08] hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag">WhatsApp API + PostgreSQL + Claude</span>
+              <span class="text-xs font-code text-emerald-400 font-bold">SUB-10S RESPONSE</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-white mb-2">
+              24/7 Omnichannel Support & Booking Chatbot
+            </h3>
+            
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+              Engineered a multi-channel AI assistant for customer inquiries, real-time inventory checks, order status queries, and appointment scheduling with 72% autonomous resolution without human staff intervention.
+            </p>
+
+            <!-- Visual Flowchart Architecture Preview -->
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 mb-6 space-y-3 font-code text-xs">
+              <div class="flex items-center justify-between text-slate-400 border-b border-slate-800 pb-2">
+                <span>SYSTEM PIPELINE</span>
+                <span class="text-emerald-400">STATUS: ACTIVE</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">[WhatsApp / Web]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300">[Vector RAG Agent]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-300">[Auto Res / Booking]</span>
+              </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-t border-slate-800 text-center font-code text-xs">
+              <div>
+                <div class="text-slate-400 text-[10px]">AVG LATENCY</div>
+                <div class="text-emerald-400 font-bold">6.8s</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">DEFLECTED</div>
+                <div class="text-cyan-400 font-bold">72% Auto</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">MONTHLY SAVED</div>
+                <div class="text-purple-400 font-bold">$14,200</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-5 mt-2 flex items-center justify-between">
+            <button class="inspect-pipeline-btn text-xs font-tech font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5" data-project-id="3">
+              <span>Inspect Workflow Pipeline</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="text-xs font-code text-slate-400 hover:text-white">Request Similar Build →</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: High-Converting Website Build & Optimization -->
+        <div class="glass-panel tilt-card p-7 rounded-2xl border border-white/[0.08] hover:border-purple-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag-purple">Lovable + Antigravity + Tailwind</span>
+              <span class="text-xs font-code text-cyan-400 font-bold">99 LIGHTHOUSE</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-white mb-2">
+              High-Converting Web Platform & Speed Engineering
+            </h3>
+            
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+              Redesigned and re-architected a legacy slow company portal into an ultra-modern executive platform with 3D interactive graphics, sub-400ms load times, and a 2.4x increase in completed audit bookings.
+            </p>
+
+            <!-- Visual Flowchart Architecture Preview -->
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 mb-6 space-y-3 font-code text-xs">
+              <div class="flex items-center justify-between text-slate-400 border-b border-slate-800 pb-2">
+                <span>SYSTEM PIPELINE</span>
+                <span class="text-emerald-400">STATUS: ACTIVE</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-cyan-300">[Modern WebGL UI]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-300">[Edge Cache CDN]</span>
+                <span class="text-slate-500">→</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">[2.4x Conversion]</span>
+              </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-3 gap-2 py-3 border-t border-slate-800 text-center font-code text-xs">
+              <div>
+                <div class="text-slate-400 text-[10px]">LOAD TIME</div>
+                <div class="text-emerald-400 font-bold">0.42s</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">BOUNCE RATE</div>
+                <div class="text-cyan-400 font-bold">-42%</div>
+              </div>
+              <div>
+                <div class="text-slate-400 text-[10px]">BOOKINGS</div>
+                <div class="text-purple-400 font-bold">2.4x Growth</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-5 mt-2 flex items-center justify-between">
+            <button class="inspect-pipeline-btn text-xs font-tech font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1.5" data-project-id="4">
+              <span>Inspect Workflow Pipeline</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="text-xs font-code text-slate-400 hover:text-white">Request Similar Build →</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       6. BEHIND-THE-SCENES: "WATCH HOW I BUILD" VIDEO SHOWCASE SECTION
+       ========================================================================== -->
+  <section id="process" class="py-20 bg-slate-950/60 border-t border-white/[0.06] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-tech text-xs tracking-wider uppercase">
+          <span>Behind The Code</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+          Watch How I Build: <span class="gradient-text-cyan">The Rapid Delivery Engine</span>
+        </h2>
+        <p class="font-body text-slate-300 text-base sm:text-lg">
+          I read through the operational problems, ponder on the strategic architecture, and deploy with the necessary AI tools—taking systems from audit to production in days.
+        </p>
+      </div>
+
+      <!-- Cinema-Style Interactive Video Showcase Player -->
+      <div class="max-w-5xl mx-auto video-frame-glow bg-slate-950">
+        
+        <!-- Glowing Scanner Line -->
+        <div class="scan-line"></div>
+
+        <!-- Video Header Top Bar -->
+        <div class="p-4 bg-slate-900/90 border-b border-white/[0.08] flex items-center justify-between font-tech text-xs">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="font-code text-slate-400 ml-2">Juliet_Build_Session_Production_n8n.rec</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span id="cinema-step-status" class="text-cyan-400 font-code font-bold">Step 1 of 3: Deep Process Audit</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 text-[10px] font-code">1080p 60fps</span>
+          </div>
+        </div>
+
+        <!-- Screen Recording Player Simulation Area -->
+        <div class="relative h-[340px] sm:h-[420px] bg-[#05070d] p-6 flex flex-col justify-between overflow-hidden">
+          
+          <!-- Live Interactive Code / Workflow Stream -->
+          <pre id="cinema-stage-preview" class="font-code text-xs sm:text-sm text-cyan-300/90 leading-relaxed whitespace-pre-wrap select-none">// Friction Analysis
+IDENTIFIED: 140+ weekly manual customer inquiries
+BOTTLENECK: Delayed average response (4.2 hours)
+SOLUTION: n8n Webhook Listener -> Claude 3.5 Sonnet Tool Caller
+CONNECTING: WhatsApp Business API + HubSpot CRM (Zero Data Loss)</pre>
+
+          <!-- Interactive Play Button Overlay -->
+          <div id="cinema-play-overlay" class="absolute inset-0 bg-[#06080F]/65 backdrop-blur-sm flex flex-col items-center justify-center cursor-pointer transition-opacity duration-300 group">
+            <div id="cinema-play-btn" class="w-20 h-20 rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center text-cyan-300 shadow-[0_0_30px_rgba(0,240,255,0.5)] group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300">
+              <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="font-tech text-sm font-bold text-white mt-4 tracking-wider uppercase group-hover:text-cyan-300 transition">
+              Click to Run Video Demo
+            </span>
+          </div>
+
+          <!-- Bottom Scrubbing Bar -->
+          <div class="relative z-10 pt-4 border-t border-white/[0.08]">
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mb-3 cursor-pointer">
+              <div id="cinema-progress-bar" class="bg-gradient-to-r from-cyan-400 to-purple-500 h-full w-1/4 transition-all duration-200"></div>
+            </div>
+            <div class="flex items-center justify-between text-xs font-code text-slate-400">
+              <span>01:15 / 03:30</span>
+              <span class="text-cyan-400">Juliet Jamgbadi Engineering Pipeline</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Chapter Markers -->
+        <div class="p-4 bg-slate-900/80 border-t border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <button class="chapter-pill p-3 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 text-left font-tech text-xs transition" data-chapter="1">
+            <div class="font-bold">01. Mapping The Bottleneck</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Day 1: Friction Audit & Logic Flowchart</div>
+          </button>
+
+          <button class="chapter-pill p-3 rounded-xl bg-slate-900/60 text-slate-400 hover:text-white text-left font-tech text-xs transition" data-chapter="2">
+            <div class="font-bold">02. n8n + Claude Pipeline</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Days 2–5: Custom Nodes, Prompts & APIs</div>
+          </button>
+
+          <button class="chapter-pill p-3 rounded-xl bg-slate-900/60 text-slate-400 hover:text-white text-left font-tech text-xs transition" data-chapter="3">
+            <div class="font-bold">03. Testing & Live Deployment</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Day 7: Launch, Training & 24/7 Hand-off</div>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Rapid 3-Step Delivery Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-12">
+        <div class="glass-panel p-6 rounded-xl border border-white/[0.06]">
+          <div class="text-xs font-code text-cyan-400 font-bold mb-2">PHASE 01 // DAY 1</div>
+          <h4 class="font-display font-bold text-lg text-white mb-2">Operational Friction Audit</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            I review your team's manual operations, isolate where hours are hemorrhaged, and present a clear visual architecture map before writing code.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl border border-white/[0.06]">
+          <div class="text-xs font-code text-purple-400 font-bold mb-2">PHASE 02 // DAYS 2–7</div>
+          <h4 class="font-display font-bold text-lg text-white mb-2">Rapid Build & API Integration</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            I engineer the autonomous AI nodes (n8n + Claude), hook up your CRMs, payment gateways, and WhatsApp API, and stress-test every edge case.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl border border-white/[0.06]">
+          <div class="text-xs font-code text-emerald-400 font-bold mb-2">PHASE 03 // LAUNCH</div>
+          <h4 class="font-display font-bold text-lg text-white mb-2">Production Hand-off & Support</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Seamless live deployment with zero business interruption, automated error alerts, and a recorded training walkthrough for your team.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       7. CLIENT TESTIMONIALS & SOCIAL PROOF SECTION
+       ========================================================================== -->
+  <section id="testimonials" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 font-tech text-xs tracking-wider uppercase">
+          <span>Real Outcomes & Trust</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+          What Leaders Say About <span class="gradient-text-cyan">Juliet's Systems</span>
+        </h2>
+        <p class="font-body text-slate-300 text-base sm:text-lg">
+          Direct feedback from operators and founders who replaced chaotic manual tasks with autonomous AI reliability.
+        </p>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1: Email Automation -->
+        <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-cyan-400">
+          <div>
+            <!-- Star Ratings -->
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <span>★★★★★</span>
+              <span class="text-xs font-code text-slate-400 ml-2">5.0 Verified</span>
+            </div>
+
+            <p class="text-slate-200 text-sm leading-relaxed mb-6 font-body italic">
+              "Before Juliet stepped in, our medical clinic was drowning in over 150 daily patient inquiries. Her custom Claude + n8n email agent <strong>completely cleared our inbox backlog</strong> and accurately triaged urgent appointment requests. It literally gave us 15 hours back every single week."
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-display font-bold text-cyan-400 border border-slate-700">
+              MV
+            </div>
+            <div>
+              <div class="font-tech font-bold text-sm text-white">Dr. Marcus Vance</div>
+              <div class="text-xs text-slate-400">Founder, Vance Healthcare Clinic</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: Multi-App Web Integration -->
+        <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-purple-400">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <span>★★★★★</span>
+              <span class="text-xs font-code text-slate-400 ml-2">5.0 Verified</span>
+            </div>
+
+            <p class="text-slate-200 text-sm leading-relaxed mb-6 font-body italic">
+              "We had customer data fragmented across Shopify, HubSpot, and our internal tools. Juliet connected disparate third-party apps directly to our website so <strong>customer data flows automatically without glitches</strong>. Zero duplicate records, zero dropped leads."
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-display font-bold text-purple-400 border border-slate-700">
+              ER
+            </div>
+            <div>
+              <div class="font-tech font-bold text-sm text-white">Elena Rostova</div>
+              <div class="text-xs text-slate-400">COO, NovaFlow Commerce</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3: Web Optimization & Build -->
+        <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-emerald-400">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <span>★★★★★</span>
+              <span class="text-xs font-code text-slate-400 ml-2">5.0 Verified</span>
+            </div>
+
+            <p class="text-slate-200 text-sm leading-relaxed mb-6 font-body italic">
+              "Juliet's rebuild of our platform using Lovable and Antigravity transformed our digital presence. We saw an immediate <strong>2.4x jump in booked audit calls</strong>, and our page speed jumped to a 99 Lighthouse score. She understands both engineering and conversion psychology."
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-display font-bold text-emerald-400 border border-slate-700">
+              TA
+            </div>
+            <div>
+              <div class="font-tech font-bold text-sm text-white">Tariq Al-Mansoor</div>
+              <div class="text-xs text-slate-400">Head of Growth, Kinetix AI SaaS</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Highlighted Client Video Testimonial Card with Audio Visualizer Slot -->
+      <div class="max-w-4xl mx-auto mt-12 p-6 rounded-2xl glass-panel border border-cyan-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-full bg-cyan-950 flex items-center justify-center text-cyan-400 border border-cyan-400/40 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-bold text-white text-base">Client Audio Case Debrief // 02:40 Min</div>
+            <div class="font-tech text-xs text-slate-400">How We Replaced 3 FTE Manual Support Roles with n8n + Claude</div>
+          </div>
+        </div>
+
+        <!-- Simulated Audio Waveform -->
+        <div class="flex items-center gap-1">
+          <span class="w-1 h-3 bg-cyan-400 rounded-full animate-pulse"></span>
+          <span class="w-1 h-7 bg-cyan-300 rounded-full animate-pulse"></span>
+          <span class="w-1 h-5 bg-purple-400 rounded-full animate-pulse"></span>
+          <span class="w-1 h-8 bg-cyan-400 rounded-full animate-pulse"></span>
+          <span class="w-1 h-4 bg-purple-300 rounded-full animate-pulse"></span>
+          <span class="w-1 h-6 bg-cyan-400 rounded-full animate-pulse"></span>
+          <span class="w-1 h-2 bg-slate-500 rounded-full"></span>
+        </div>
+
+        <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="btn-secondary-glass px-4 py-2 text-xs font-tech font-bold">
+          Discuss Your Pipeline →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       8. TRUST, SECURITY & BOOKING FOOTER
+       ========================================================================== -->
+  <footer id="contact" class="pt-20 pb-12 bg-[#04060b] border-t border-white/[0.08] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Enterprise Security & Privacy Guarantee Banner -->
+      <div class="max-w-4xl mx-auto mb-16 p-4 rounded-xl bg-slate-900/60 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 font-tech">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 border border-emerald-500/40">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <div class="text-white font-bold text-xs uppercase tracking-wider">Enterprise Data Security & Privacy Guarantee</div>
+            <div class="text-slate-400 text-xs">Zero customer data is used for model training. All API keys and workflows are end-to-end encrypted.</div>
+          </div>
+        </div>
+        <span class="text-[11px] font-code text-emerald-400 font-bold bg-emerald-950 px-2.5 py-1 rounded border border-emerald-700/50">
+          SOC2-Compliant Principles
+        </span>
+      </div>
+
+      <!-- Main Booking Container: 3-Question Intake Form + Direct Calendly Card -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">
+        
+        <!-- Left Column: Quick 3-Question Intake Form -->
+        <div class="lg:col-span-6 glass-panel p-8 rounded-2xl border border-cyan-500/30">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 font-tech text-xs uppercase mb-3">
+            <span>Fast 60-Second Intake</span>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-white mb-2">Request Your Free Automation Audit</h3>
+          <p class="text-sm text-slate-300 mb-6 font-body">
+            Tell me about your business bottleneck below. You'll be redirected instantly to lock in your 30-minute calendar slot.
+          </p>
+
+          <form id="intake-form" class="space-y-4 font-tech">
+            
+            <!-- Question 1: Business Type -->
+            <div>
+              <label class="block text-xs text-slate-300 font-semibold mb-1.5">1. What is your business type?</label>
+              <select id="intake-biz-type" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 font-body">
+                <option value="Local Business / Clinic / Real Estate">Local Business (Clinic, Real Estate, Service Agency)</option>
+                <option value="E-Commerce / DTC Brand">E-Commerce Brand (Shopify / DTC)</option>
+                <option value="SaaS / Software Company">SaaS / Software / B2B Tech</option>
+                <option value="Other">Other High-Volume Operation</option>
+              </select>
+            </div>
+
+            <!-- Question 2: Daily Bottleneck -->
+            <div>
+              <label class="block text-xs text-slate-300 font-semibold mb-1.5">2. What task takes up the most time?</label>
+              <select id="intake-bottleneck" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 font-body">
+                <option value="Customer Support & Scheduling">Customer support DMs & manual appointment scheduling</option>
+                <option value="Inbound Email Backlog">Daily inbound email backlog & quote drafting</option>
+                <option value="Spreadsheet & CRM Entry">Copying customer data across spreadsheets & CRM</option>
+                <option value="Slow Website & Low Conversion">Slow website platform & low visitor-to-lead conversion</option>
+              </select>
+            </div>
+
+            <!-- Question 3: Email or WhatsApp Contact -->
+            <div>
+              <label class="block text-xs text-slate-300 font-semibold mb-1.5">3. Your Email or WhatsApp Number</label>
+              <input 
+                id="intake-contact"
+                type="text" 
+                required
+                placeholder="e.g. alex@company.com or +1 (555) 000-0000"
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 font-body placeholder-slate-500"
+              />
+            </div>
+
+            <button type="submit" class="w-full btn-primary-glow py-3.5 text-sm font-tech font-bold text-slate-950 flex items-center justify-center gap-2 mt-4">
+              <span>Submit & Lock In 30-Min Audit Call</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+
+          </form>
+
+          <!-- Success Alert Message -->
+          <div id="intake-success" class="hidden p-6 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-center space-y-3 font-tech">
+            <div class="w-12 h-12 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center mx-auto font-bold text-xl">✓</div>
+            <h4 class="font-display font-bold text-lg text-white">Intake Received!</h4>
+            <p class="text-xs text-slate-300">Redirecting you directly to Juliet's official Calendly calendar...</p>
+            <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="inline-block mt-2 text-xs font-code text-cyan-300 underline">
+              Click here if not redirected automatically →
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Direct Calendly & Contact Card -->
+        <div class="lg:col-span-6 glass-panel p-8 rounded-2xl border border-purple-500/30 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="relative">
+                <img src="assets/juliet.jpg" alt="Jamgbadi Juliet" class="w-16 h-16 rounded-full object-cover border-2 border-cyan-400">
+                <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-[#06080F]"></span>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-xl text-white">JAMGBADI JULIET</h4>
+                <div class="font-tech text-xs text-cyan-300">AI Systems Architect & Automation Specialist</div>
+                <div class="font-code text-[11px] text-slate-400 mt-1">Direct Booking & Verification</div>
+              </div>
+            </div>
+
+            <div class="space-y-3 font-tech text-sm mb-8">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase font-code">Direct Email</div>
+                  <a href="mailto:jamgbadijuliet94@gmail.com" class="text-white hover:text-cyan-300 font-semibold font-code text-xs">jamgbadijuliet94@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase font-code">Direct Phone / WhatsApp</div>
+                  <a href="tel:09161014048" class="text-white hover:text-cyan-300 font-semibold font-code text-xs">09161014048</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase font-code">Calendly Calendar</div>
+                  <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="text-white hover:text-cyan-300 font-semibold font-code text-xs">calendly.com/jamgbadijuliet49/30min</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://calendly.com/jamgbadijuliet49/30min" target="_blank" class="w-full btn-primary-glow py-3.5 text-sm font-tech font-bold text-slate-950 text-center flex items-center justify-center gap-2">
+            <span>Open Direct Calendly Booking Page</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Social Profiles & Content Channels -->
+      <div class="pt-8 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <img src="assets/juliet.jpg" alt="Juliet" class="w-8 h-8 rounded-full object-cover">
+          <span class="font-display font-bold text-sm text-white">JAMGBADI JULIET</span>
+          <span class="text-slate-600">|</span>
+          <span class="text-xs text-slate-400 font-tech">© 2026 Jamgbadi Juliet. All rights reserved.</span>
+        </div>
+
+        <!-- Social Icons (YouTube, LinkedIn, Instagram, Blog, GitHub) -->
+        <div class="flex items-center gap-4 text-slate-400 font-tech text-xs">
+          
+          <a href="https://www.linkedin.com" target="_blank" class="hover:text-cyan-400 transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="https://www.youtube.com" target="_blank" class="hover:text-red-400 transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
+
+          <a href="https://www.instagram.com" target="_blank" class="hover:text-pink-400 transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <a href="#" class="hover:text-purple-400 transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+            <span>Tech Blog</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       9. INTERACTIVE "INSPECT PIPELINE" PROJECT DETAIL MODAL
+       ========================================================================== -->
+  <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
+    <div class="glass-panel p-6 sm:p-8 rounded-2xl max-w-2xl w-full border border-cyan-500/40 shadow-2xl relative">
+      <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
+        <h3 id="modal-project-title" class="font-display font-bold text-xl text-white">Project Pipeline Architecture</h3>
+        <button id="modal-close-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.05]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="modal-project-body" class="py-5">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Script initialization -->
+  <script src="app.js"></script>
+
+</body>
+</html>
